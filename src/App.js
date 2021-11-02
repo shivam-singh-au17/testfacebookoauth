@@ -20,6 +20,11 @@ function App() {
     }
   }
 
+
+  const handleLogOut = () => {
+    setLogin(false);
+  }
+
   return (
     <div className="container">
       <Card style={{ width: '600px' }}>
@@ -27,7 +32,7 @@ function App() {
           {!login &&
             <FacebookLogin
               appId="443802160480154"
-              autoLoad={false}
+              autoLoad={true}
               fields="name,email,picture"
               scope="public_profile,user_friends"
               callback={responseFacebook}
@@ -43,6 +48,7 @@ function App() {
             <Card.Text>
               {data.email}
             </Card.Text>
+            <button onClick={handleLogOut}>Log Out</button>
           </Card.Body>
         }
       </Card>
