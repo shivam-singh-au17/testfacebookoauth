@@ -32,7 +32,7 @@ function App() {
           {!login &&
             <FacebookLogin
               appId="443802160480154"
-              autoLoad={false}
+              autoLoad={true}
               fields="name,email,picture"
               scope="public_profile,user_friends"
               callback={responseFacebook}
